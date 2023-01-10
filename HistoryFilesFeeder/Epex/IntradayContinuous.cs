@@ -21,7 +21,7 @@ public class IntradayContinuous
     public double? LastPrice { get; set; }
     public double? WeightedAveragePrice { get; set; }
     public string? Currency { get; set; }
-    public DateTime LastPriceTimestamp { get; set; }
+    public DateTime? LastPriceTimestamp { get; set; }
     public double? VolumeBuy { get; set; }
     public double? VolumeSell { get; set; }
     public string? VolumeUnit { get; set; }

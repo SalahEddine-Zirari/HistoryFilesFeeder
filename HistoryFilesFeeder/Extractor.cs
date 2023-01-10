@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using HistoryFilesFeeder.Epex;
 using System.Globalization;
 
 
@@ -20,10 +21,13 @@ public class Extractor : IDisposable
             using (StreamReader reader = new StreamReader(filePath))
             using (CsvReader csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                csvReader.Configuration. = true;
-                var records = (csvReader.GetRecords<T>().ToList());
-                objects.AddRange(records);
 
+                var firstLine = reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    var records = (csvReader.GetRecords<T>().ToList());
+                    objects.AddRange(records);
+                }
             }
         }
 
