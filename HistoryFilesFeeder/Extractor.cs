@@ -5,12 +5,9 @@ using System.Globalization;
 
 namespace HistoryFilesFeeder;
 
-public class Extractor : IDisposable
+public class Extractor
 {
-    public void Dispose()
-    {
-        throw new NotImplementedException();
-    }
+
 
     public IEnumerable<T> ExtractorMethod<T>(string[] filePaths)
     {

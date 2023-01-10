@@ -11,7 +11,6 @@ namespace HistoryFilesFeeder.Epex;
 
 public class IntradayContinuous
 {
-    [Key]
     public DateTime DeliveryStart { get; set; }
     public DateTime DeliveryEnd { get; set; }
     [Ignore]
