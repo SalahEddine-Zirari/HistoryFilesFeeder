@@ -21,7 +21,10 @@ public class DataHistoryDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<IntradayContinuous>()
-            .HasKey(x => x.DeliveryStart);
+            .HasKey(x => x.Id);
+        modelBuilder.Entity<IntradayContinuous>()
+           .Property(x => x.Id);
+
         modelBuilder.Entity<IntradayContinuous>()
            .Property(x => x.DeliveryStart);
         modelBuilder.Entity<IntradayContinuous>()

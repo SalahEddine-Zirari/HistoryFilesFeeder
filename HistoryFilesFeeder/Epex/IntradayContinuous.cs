@@ -11,10 +11,12 @@ namespace HistoryFilesFeeder.Epex;
 
 public class IntradayContinuous
 {
-    public DateTime DeliveryStart { get; set; }
-    public DateTime DeliveryEnd { get; set; }
     [Ignore]
-    public string? Area { get; set; } = "austria";
+    public int Id { get; set; }
+    public DateTime? DeliveryStart { get; set; }
+    public DateTime? DeliveryEnd { get; set; }
+    [Ignore]
+    public string? Area { get; set; } = "Switzerland";
     public double? LowPrice { get; set; }
     public double? HighPrice { get; set; }
     public double? LastPrice { get; set; }

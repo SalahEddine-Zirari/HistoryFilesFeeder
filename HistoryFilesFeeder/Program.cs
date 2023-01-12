@@ -3,7 +3,7 @@ using HistoryFilesFeeder;
 using Microsoft.EntityFrameworkCore;
 using HistoryFilesFeeder.Ef;
 
-var filePaths = Directory.GetFiles(@"C:\Users\ODIN\Desktop\Lanatech\histo-students\epex\austria\Intraday Continuous\EOD\Historical\Results", "*.csv");
+var filePaths = Directory.GetFiles(@"C:\Users\ODIN\Desktop\Lanatech\histo-students\epex\switzerland\Intraday Continuous\EOD\Results", "*.csv");
 
 Extractor extract = new Extractor();
 
@@ -11,12 +11,9 @@ Extractor extract = new Extractor();
 var result = extract.ExtractorMethod<IntradayContinuous>(filePaths);
 using (var context = new DataHistoryDbContext())
 {
-    result.ToList().ForEach(e =>
-    {
-        try { context.Add(e); }
-        catch (Exception ex) { };
-    });
-
+    context.AddRangeAsync(result);
     context.SaveChanges();
 }
+
+
 
