@@ -9,7 +9,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace HistoryFilesFeeder.Epex;
 
-public class IntradayContinuous
+public class IntradayContinuous :ILocatedObject
 {
 
     public DateTime DeliveryStart { get; set; }
